@@ -10,14 +10,15 @@ import { Button } from "@/components/ui/button";
 import Expenses from "@/components/expense";
 import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
-import { getTotalExpenseToday } from "@/lib/utils";
-import { useExpense } from "@/lib/context";
+import { getBalanceAmount, getTotalExpenseToday } from "@/lib/utils";
+import { useExpense, useIncome } from "@/lib/context";
 import Incomes from "@/components/income";
 
 export default function Home() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [currentTab, setCurrentTab] = useState("expenses");
   const {expenses} = useExpense()
+  const {income} = useIncome()
   function formatDate(dateInput:Date) {
     const date = new Date(dateInput); // Convert input to Date object
     return date.toLocaleDateString("en-US", { month: "short", day: "numeric" }); // Return formatted date
@@ -66,6 +67,14 @@ export default function Home() {
               </p>
               <span className="text-sm">Month</span>
             </div>
+          </div>
+        )}
+        {currentTab === "income" && (
+          <div className="border flex flex-col gap-2 p-4 rounded-md w-full my-10">
+            <p className="text-xl font-bold">
+              ₹{getBalanceAmount(income, expenses)}
+            </p>
+            <span className="text-sm">Balance</span>
           </div>
         )}
         <TabsContent className="w-full h-full" value="expenses">

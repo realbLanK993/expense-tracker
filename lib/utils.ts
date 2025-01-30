@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { Expense } from "./types";
+import { Expense, Income } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -43,3 +43,14 @@ export const getTotalExpenseThisMonth = (expenses: Expense[]): number => {
     })
     .reduce((total, expense) => total + expense.amount, 0);
 };
+
+export const getBalanceAmount = (income: Income[], expenses: Expense[]): number => {
+  const totalIncome = income.reduce((total, entry) => total + entry.amount, 0);
+  const totalExpenses = expenses.reduce(
+    (total, entry) => total + entry.amount,
+    0
+  );
+
+  return totalIncome - totalExpenses;
+};
+
