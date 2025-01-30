@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
-import { ExpenseProvider } from "@/lib/context";
+import { CategoryProvider, ExpenseProvider, IncomeProvider } from "@/lib/context";
 
 const poppins = Poppins({weight:["100","200","300","400", "500", "600", "700"], subsets:["latin"]});
 
@@ -19,14 +19,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased flex flex-col justify-center items-center`}
+        className={`${poppins.className} antialiased flex flex-col justify-center items-center w-full h-full`}
       >
-        <ExpenseProvider>
-          <div className="flex flex-col gap-8 max-w-[1000px] w-full p-4 md:px-8">
-            <Navbar />
-            <div className="w-full">{children}</div>
-          </div>
-        </ExpenseProvider>
+        <CategoryProvider>
+          <ExpenseProvider>
+            <IncomeProvider>
+              <div className="flex flex-col gap-8 max-w-[1000px] w-full p-4 md:px-8">
+                <Navbar />
+                <div className="w-full">{children}</div>
+              </div>
+            </IncomeProvider>
+          </ExpenseProvider>
+        </CategoryProvider>
       </body>
     </html>
   );

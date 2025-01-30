@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 export type Category = {
-  id: string | number;
+  id: string;
   name: string;
   color?: string;
   symbol?: string;
@@ -9,7 +9,7 @@ export type Category = {
 };
 
 export type Expense = {
-  id: string|number;
+  id: string;
   title: string;
   amount: number;
   date: Date;
@@ -18,10 +18,10 @@ export type Expense = {
 };
 
 export type Income = {
-  id: string | number;
+  id: string;
   title: string;
   amount: number;
   date: Date;
   category: Category;
-  description: string;
+  description?: string;
 };
