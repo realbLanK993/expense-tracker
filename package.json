@@ -6,8 +6,9 @@
     "dev": "next dev -H 0.0.0.0",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build && next export",
-    "deploy": "npm run build && gh-pages -d out"
+    "build": "next build",
+    "export": "next build",
+    "deploy": "npm run export && gh-pages -d out"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.5",

@@ -2,7 +2,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -26,7 +25,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useState } from "react";
-import { Category, Income } from "@/lib/types";
+import { Income } from "@/lib/types";
 import { format } from "date-fns";
 import { Calendar } from "../ui/calendar";
 import { CalendarIcon } from "lucide-react";

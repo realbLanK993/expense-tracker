@@ -2,7 +2,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -16,7 +15,6 @@ import {
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -27,14 +25,13 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useState } from "react";
-import { Category, Expense } from "@/lib/types";
+import { Expense } from "@/lib/types";
 import { format } from "date-fns";
 import { Calendar } from "../ui/calendar";
 import { CalendarIcon, Check, ChevronDown, ChevronUp, Delete } from "lucide-react";
 import { Textarea } from "../ui/textarea";
 import { useCategory, useExpense } from "@/lib/context";
 import { Badge } from "../ui/badge";
-import { SelectLabel } from "@radix-ui/react-select";
 import Link from "next/link";
 import { ScrollArea } from "../ui/scroll-area";
 

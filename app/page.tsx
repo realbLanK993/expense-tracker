@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Popover,
@@ -8,7 +7,6 @@ import {
 } from "@/components/ui/popover";
 
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronLeft, ChevronRight, icons } from "lucide-react";
 import Expenses from "@/components/expense";
 import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";

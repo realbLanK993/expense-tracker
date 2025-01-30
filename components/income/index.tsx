@@ -1,15 +1,8 @@
 "use client"
-import { Category, Expense } from "@/lib/types";
-import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
-import { useEffect, useState } from "react";
-import { useExpense } from "@/lib/context";
-import { Pencil } from "lucide-react";
-import { format } from "date-fns";
 import {
   ContextMenu,
   ContextMenuContent,
-  ContextMenuItem,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
 import {
